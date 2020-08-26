@@ -25,9 +25,16 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         // Create a new scene
         let scene = SCNScene(named: "art.scnassets/ship.scn")!
+        let material = SCNMaterial()
+               material.diffuse.contents = UIColor.orange
         
         // Set the scene to the view
         sceneView.scene = scene
+        
+        sceneView.debugOptions = [ARSCNDebugOptions.showWorldOrigin]
+        sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints]
+
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
